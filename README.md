@@ -1,3 +1,3 @@
-# AdventOfCode2020 in Java
+# AdventOfCode 2020 in Java
 
-My shot on the AdventOfCode challenges.
+My shot on the AdventOfCode 2020 challenges in Java.
