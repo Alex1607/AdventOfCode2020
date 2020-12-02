@@ -1,9 +1,10 @@
 package pw.reinert.adventofcode;
 
-import pw.reinert.adventofcode.days.Day1_0;
-import pw.reinert.adventofcode.days.Day1_1;
-import pw.reinert.adventofcode.days.Day2_0;
-import pw.reinert.adventofcode.days.Day2_1;
+import pw.reinert.adventofcode.challenge.ChallengeManager;
+import pw.reinert.adventofcode.challenge.days.Day1_0;
+import pw.reinert.adventofcode.challenge.days.Day1_1;
+import pw.reinert.adventofcode.challenge.days.Day2_0;
+import pw.reinert.adventofcode.challenge.days.Day2_1;
 
 import java.io.File;
 

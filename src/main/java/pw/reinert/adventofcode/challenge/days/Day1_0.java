@@ -1,6 +1,6 @@
-package pw.reinert.adventofcode.days;
+package pw.reinert.adventofcode.challenge.days;
 
-import pw.reinert.adventofcode.Challenge;
+import pw.reinert.adventofcode.challenge.Challenge;
 
 import java.io.File;
 

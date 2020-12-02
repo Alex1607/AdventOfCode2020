@@ -1,17 +1,18 @@
-package pw.reinert.adventofcode.days;
+package pw.reinert.adventofcode.challenge.days;
 
-import pw.reinert.adventofcode.Challenge;
+import pw.reinert.adventofcode.challenge.Challenge;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Day2_1 extends Challenge {
+public class Day2_0 extends Challenge {
 
     private int matches = 0;
     private Pattern pattern = Pattern.compile("(\\d+)-(\\d+) ([a-z]): ([a-z]+)");
 
-    public Day2_1(String id, File data) {
+    public Day2_0(String id, File data) {
         super(id, data);
     }
 
@@ -21,12 +22,14 @@ public class Day2_1 extends Challenge {
             Matcher matcher = pattern.matcher(line);
 
             if (matcher.find()) {
-                int pos1 = Integer.parseInt(matcher.group(1));
-                int pos2 = Integer.parseInt(matcher.group(2));
+                int min = Integer.parseInt(matcher.group(1));
+                int max = Integer.parseInt(matcher.group(2));
                 String cha = matcher.group(3);
                 String password = matcher.group(4);
 
-                if (password.split("")[pos1 - 1].equals(cha) ^ password.split("")[pos2 - 1].equals(cha)) matches++;
+                long occ = Arrays.stream(password.split("")).filter(s -> s.equals(cha)).count();
+
+                if(min <= occ && occ <= max) matches++;
             }
         });
 

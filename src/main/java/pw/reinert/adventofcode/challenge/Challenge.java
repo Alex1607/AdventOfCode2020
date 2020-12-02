@@ -1,4 +1,4 @@
-package pw.reinert.adventofcode;
+package pw.reinert.adventofcode.challenge;
 
 import java.io.*;
 import java.util.ArrayList;
