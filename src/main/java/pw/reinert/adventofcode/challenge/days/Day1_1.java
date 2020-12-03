@@ -19,8 +19,7 @@ public class Day1_1 extends Challenge {
                 int valueY = Integer.parseInt(getLines().get(y));
                 for (int z = y; z < getLines().size(); z++) {
                     int valueZ = Integer.parseInt(getLines().get(z));
-
-                    if (valueX + valueY + valueZ == 2020) AdventOfCode.LOGGER.log(Level.INFO, String.valueOf(valueX * valueY * valueZ));
+                    if (valueX + valueY + valueZ == 2020) AdventOfCode.LOGGER.log(Level.INFO, "{0}", (valueX * valueY * valueZ));
                 }
             }
         }

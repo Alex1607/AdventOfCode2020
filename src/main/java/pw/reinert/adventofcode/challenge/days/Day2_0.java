@@ -35,6 +35,6 @@ public class Day2_0 extends Challenge {
             }
         });
 
-        AdventOfCode.LOGGER.log(Level.INFO, String.valueOf(matches));
+        AdventOfCode.LOGGER.log(Level.INFO, "{0}", matches);
     }
 }

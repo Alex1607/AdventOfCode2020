@@ -14,12 +14,12 @@ public class Day1_0 extends Challenge {
 
     @Override
     public void run() {
-        for(int x = 0; x < getLines().size(); x++) {
+        for (int x = 0; x < getLines().size(); x++) {
             int valueX = Integer.parseInt(getLines().get(x));
-            for(int y = x; y < getLines().size(); y++) {
+            for (int y = x; y < getLines().size(); y++) {
                 int valueY = Integer.parseInt(getLines().get(y));
 
-                if(valueX + valueY == 2020) AdventOfCode.LOGGER.log(Level.INFO, String.valueOf(valueX * valueY));
+                if (valueX + valueY == 2020) AdventOfCode.LOGGER.log(Level.INFO, "{0}", (valueX * valueY));
             }
         }
     }
