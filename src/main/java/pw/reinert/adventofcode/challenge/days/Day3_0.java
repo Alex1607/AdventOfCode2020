@@ -1,8 +1,10 @@
 package pw.reinert.adventofcode.challenge.days;
 
+import pw.reinert.adventofcode.AdventOfCode;
 import pw.reinert.adventofcode.challenge.Challenge;
 
 import java.io.File;
+import java.util.logging.Level;
 
 public class Day3_0 extends Challenge {
 
@@ -24,7 +26,7 @@ public class Day3_0 extends Challenge {
             if(map[i][z].equals("#")) hits++;
         }
 
-        System.out.println(hits);
+        AdventOfCode.LOGGER.log(Level.INFO, String.valueOf(hits));
     }
 }
 

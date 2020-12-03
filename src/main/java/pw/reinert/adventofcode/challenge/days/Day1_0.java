@@ -1,8 +1,10 @@
 package pw.reinert.adventofcode.challenge.days;
 
+import pw.reinert.adventofcode.AdventOfCode;
 import pw.reinert.adventofcode.challenge.Challenge;
 
 import java.io.File;
+import java.util.logging.Level;
 
 public class Day1_0 extends Challenge {
 
@@ -17,7 +19,7 @@ public class Day1_0 extends Challenge {
             for(int y = x; y < getLines().size(); y++) {
                 int valueY = Integer.parseInt(getLines().get(y));
 
-                if(valueX + valueY == 2020) System.out.println(valueX * valueY);
+                if(valueX + valueY == 2020) AdventOfCode.LOGGER.log(Level.INFO, String.valueOf(valueX * valueY));
             }
         }
     }

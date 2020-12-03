@@ -1,8 +1,10 @@
 package pw.reinert.adventofcode.challenge.days;
 
+import pw.reinert.adventofcode.AdventOfCode;
 import pw.reinert.adventofcode.challenge.Challenge;
 
 import java.io.File;
+import java.util.logging.Level;
 
 public class Day3_1 extends Challenge {
 
@@ -25,7 +27,7 @@ public class Day3_1 extends Challenge {
         Sloap sloap3 = new Sloap(1, 7);
         Sloap sloap4 = new Sloap(2, 1);
 
-        System.out.println(sloap.checkHits() * sloap1.checkHits() * sloap2.checkHits() * sloap3.checkHits() * sloap4.checkHits());
+        AdventOfCode.LOGGER.log(Level.INFO, String.valueOf(sloap.checkHits() * sloap1.checkHits() * sloap2.checkHits() * sloap3.checkHits() * sloap4.checkHits()));
     }
 
     private class Sloap {

@@ -1,9 +1,11 @@
 package pw.reinert.adventofcode.challenge.days;
 
+import pw.reinert.adventofcode.AdventOfCode;
 import pw.reinert.adventofcode.challenge.Challenge;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,6 +35,6 @@ public class Day2_0 extends Challenge {
             }
         });
 
-        System.out.println(matches);
+        AdventOfCode.LOGGER.log(Level.INFO, String.valueOf(matches));
     }
 }

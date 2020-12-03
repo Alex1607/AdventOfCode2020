@@ -9,9 +9,11 @@ import java.util.logging.Logger;
 
 public class AdventOfCode {
 
-    private static final Logger LOGGER = Logger.getLogger(AdventOfCode.class.getName());
+    public static final Logger LOGGER = Logger.getLogger(AdventOfCode.class.getName());
 
     public static void main(String[] args) {
+        LOGGER.setLevel(Level.INFO);
+
         ClassLoader cl = AdventOfCode.class.getClassLoader();
 
         ChallengeManager challengeManager = new ChallengeManager();
