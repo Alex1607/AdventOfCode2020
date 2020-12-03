@@ -21,21 +21,21 @@ public class Day3_1 extends Challenge {
             map[i] = super.getLines().get(i).split("");
         }
 
-        Sloap sloap = new Sloap(1, 1);
-        Sloap sloap1 = new Sloap(1, 3);
-        Sloap sloap2 = new Sloap(1, 5);
-        Sloap sloap3 = new Sloap(1, 7);
-        Sloap sloap4 = new Sloap(2, 1);
+        Slope Slope = new Slope(1, 1);
+        Slope Slope1 = new Slope(1, 3);
+        Slope Slope2 = new Slope(1, 5);
+        Slope Slope3 = new Slope(1, 7);
+        Slope Slope4 = new Slope(2, 1);
 
-        AdventOfCode.LOGGER.log(Level.INFO, "{0}", (sloap.checkHits() * sloap1.checkHits() * sloap2.checkHits() * sloap3.checkHits() * sloap4.checkHits()));
+        AdventOfCode.LOGGER.log(Level.INFO, "{0}", (Slope.checkHits() * Slope1.checkHits() * Slope2.checkHits() * Slope3.checkHits() * Slope4.checkHits()));
     }
 
-    private class Sloap {
+    private class Slope {
         private int x;
         private int z;
         private long hits;
 
-        public Sloap(int z, int x) {
+        public Slope(int z, int x) {
             this.x = x;
             this.z = z;
         }
