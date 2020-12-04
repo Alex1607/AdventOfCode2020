@@ -39,10 +39,9 @@ public abstract class Challenge {
     }
 
     public Stream<String> getStream() {
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(data));
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(data))) {
             return bufferedReader.lines();
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
