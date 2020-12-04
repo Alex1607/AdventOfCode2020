@@ -46,7 +46,7 @@ public class Day4_0 extends Challenge {
     }
 
     private class Passport {
-        private HashMap<String, String> passportData = new HashMap<>();
+        private final HashMap<String, String> passportData = new HashMap<>();
 
         public void addPassportData(String key, String value) {
             this.passportData.put(key, value);
@@ -55,6 +55,7 @@ public class Day4_0 extends Challenge {
         public boolean isValid() {
             if(passportData.keySet().size() == 7 && !passportData.containsKey("cid")) return true;
             if(passportData.keySet().size() == 8) return true;
+
             return false;
         }
     }
