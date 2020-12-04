@@ -3,17 +3,14 @@ package pw.reinert.adventofcode.challenge.days;
 import pw.reinert.adventofcode.AdventOfCode;
 import pw.reinert.adventofcode.challenge.Challenge;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
-import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
 public class Day4_0 extends Challenge {
 
+    private static final List<String> validKeys = Arrays.asList("hcl", "iyr", "hgt", "pid", "byr", "eyr", "ecl");
     private int validPassports = 0;
     StringBuilder fullData = new StringBuilder();
 
@@ -35,9 +32,6 @@ public class Day4_0 extends Challenge {
     }
 
     public boolean isValid(Map<String, String> data) {
-        if (data.keySet().size() == 7 && !data.containsKey("cid")) return true;
-        if (data.keySet().size() == 8) return true;
-
-        return false;
+        return data.keySet().containsAll(validKeys);
     }
 }

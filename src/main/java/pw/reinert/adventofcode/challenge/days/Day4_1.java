@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 public class Day4_1 extends Challenge {
 
+    private static final List<String> validKeys = Arrays.asList("hcl", "iyr", "hgt", "pid", "byr", "eyr", "ecl");
     private int validPassports = 0;
     StringBuilder fullData = new StringBuilder();
 
@@ -31,7 +32,7 @@ public class Day4_1 extends Challenge {
     }
 
     public boolean isValid(Map<String, String> data) {
-        if ((data.keySet().size() != 7 || data.containsKey("cid")) && data.keySet().size() != 8) return false;
+        if (!data.keySet().containsAll(validKeys)) return false;
 
         if (!data.get("byr").matches("^(200[0-2]|19[2-9][0-9])$")) return false;
         if (!data.get("iyr").matches("^(2020|201[0-9])$")) return false;
