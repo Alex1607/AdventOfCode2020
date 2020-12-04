@@ -3,6 +3,7 @@ package pw.reinert.adventofcode.challenge;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public abstract class Challenge {
 
@@ -35,5 +36,15 @@ public abstract class Challenge {
             e.printStackTrace();
         }
         return lines;
+    }
+
+    public Stream<String> getStream() {
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(data));
+            return bufferedReader.lines();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
