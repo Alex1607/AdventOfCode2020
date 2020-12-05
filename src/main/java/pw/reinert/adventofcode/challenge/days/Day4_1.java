@@ -20,7 +20,7 @@ public class Day4_1 extends Challenge {
 
     @Override
     public void run() {
-        super.getStream().forEach(s -> fullData.append(s).append(System.lineSeparator()));
+        super.getLines().forEach(s -> fullData.append(s).append(System.lineSeparator()));
 
         Arrays.stream(fullData.toString().split(System.lineSeparator() + System.lineSeparator())).forEach(s -> {
             s = s.replace(System.lineSeparator(), " ");

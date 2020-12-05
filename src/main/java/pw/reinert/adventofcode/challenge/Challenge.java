@@ -37,13 +37,4 @@ public abstract class Challenge {
         }
         return lines;
     }
-
-    public Stream<String> getStream() {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(data))) {
-            return bufferedReader.lines();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }
