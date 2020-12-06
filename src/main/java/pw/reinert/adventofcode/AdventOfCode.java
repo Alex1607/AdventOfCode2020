@@ -27,6 +27,8 @@ public class AdventOfCode {
         challengeManager.addChallenge(new Day4_1("4.1", new File(cl.getResource("./data/4_0.txt").getFile())));
         challengeManager.addChallenge(new Day5_0("5.0", new File(cl.getResource("./data/5_0.txt").getFile())));
         challengeManager.addChallenge(new Day5_1("5.1", new File(cl.getResource("./data/5_0.txt").getFile())));
+        challengeManager.addChallenge(new Day6_0("6.0", new File(cl.getResource("./data/6_0.txt").getFile())));
+        challengeManager.addChallenge(new Day6_1("6.1", new File(cl.getResource("./data/6_0.txt").getFile())));
 
         if(args.length != 1) {
             LOGGER.log(Level.SEVERE, "Keine ID wurde als Argument mitgegeben.");
