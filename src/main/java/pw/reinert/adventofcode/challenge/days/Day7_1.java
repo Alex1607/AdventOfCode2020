@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
 
-public class Day7_0 extends Challenge {
+public class Day7_1 extends Challenge {
 
     private List<Bag> allBags = new ArrayList<>();
 
-    public Day7_0(String id, File data) {
+    public Day7_1(String id, File data) {
         super(id, data);
     }
 
@@ -26,17 +26,25 @@ public class Day7_0 extends Challenge {
 
             Bag bag = getBag(lineData[0]);
 
-            String[] bagNames = lineData[1].replaceAll("(( ?)[0-9] | bag(s?)|\\.)", "").split(",");
+            String[] bagNames = lineData[1].replaceAll("( bag(s?)|\\.)", "").split(", ");
             for (String bagName : bagNames) {
-                bag.addNewBag(getBag(bagName));
+
+                int bagAmount = Integer.parseInt(bagName.substring(0, 1));
+                Bag bag1 = getBag(bagName.substring(2));
+
+                for (int i = 0; i < bagAmount; i++) {
+                    bag.addNewBag(bag1);
+                }
             }
         }
 
-        AdventOfCode.LOGGER.log(Level.INFO, "{0}", allBags.stream().filter(this::allowesGoldBag).count());
+        AdventOfCode.LOGGER.log(Level.INFO, "{0}", bagsInside(getBag("shiny gold"), 0));
     }
 
-    private boolean allowesGoldBag(Bag bag) {
-        return bag.getCanContain().stream().anyMatch(bag1 -> bag1.getName().equals("shiny gold") || allowesGoldBag(bag1));
+    private long bagsInside(Bag bag, long amount) {
+        amount += bag.getCanContain().size();
+        for (Bag bag1 : bag.getCanContain()) amount = bagsInside(bag1, amount);
+        return amount;
     }
 
     private Bag getBag(String name) {
