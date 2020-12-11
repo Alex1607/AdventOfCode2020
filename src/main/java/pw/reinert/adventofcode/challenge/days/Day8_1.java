@@ -25,8 +25,7 @@ public class Day8_1 extends Challenge {
 
             if (instruction.equals("nop") || instruction.equals("jmp")) {
                 instruction = instruction.equals("nop") ? "jmp" : "nop";
-                lines.remove(i);
-                lines.add(i, instruction + " " + number);
+                lines.set(i, instruction + " " + number);
 
                 int num = acc(lines);
                 if(num == Integer.MIN_VALUE) continue;
